@@ -39,10 +39,12 @@ struct ContentView: View {
                             .shadow(color: .black, radius: 2)
                     }
                 }
+                Text("User score: \(userScore)").foregroundColor(.white)
                 Spacer()
+                
             }
             .alert(isPresented: $showingScore) {
-                Alert(title: Text(scoreTitle), message: Text("You score is ???"), dismissButton: .default(Text("Continue")){
+                Alert(title: Text(scoreTitle), message:  Text(message), dismissButton: .default(Text("Continue")){
                     self.askQuestion()
                 })
             }
